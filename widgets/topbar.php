@@ -1,31 +1,20 @@
 <?php 
-namespace TopBar;
+namespace Widgets;
 
-require_once("../widgets/config.php");
+require_once "../utils/config.php";
 
-function TPrint() 
+function CreateTopbar() 
 {
-    print (
-        "<div class=\"topbar\">\n"
-    );
+    echo "<div class='topbar'>";
 
-    // logo
-    $logo = \Config\GetSubData("logo");
-    print (
-        "<img id=\"logo\" src=\"resource.php?name=$logo\" alt=\"logo\">\n"
-    );
+    $items = \Config\GetObject("topbar");
 
-    $data = \Config\GetSubData("topbar");
-
-    foreach ($data as $key => $value) {
-        print (
-            "<a href=\"$value\">$key</a>\n"
-        );
+    foreach ($items as $item => $link) 
+    {
+        echo "<a href='" . $link . "'>" . $item . "</a>";
     }
 
-    print (
-        "</div>\n"
-    );
+    echo "</div>";
 }
 
 ?>
