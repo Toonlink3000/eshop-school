@@ -13,7 +13,7 @@ function Setup()
         return;
     }
 
-    if (!Query("CREATE TABLE IF NOT EXISTS esProducts (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, spec VARCHAR(255), resources VARCHAR(255), price FLOAT NOT NULL, stock INT NOT NULL, image VARCHAR(100) NOT NULL)")) 
+    if (!Query("CREATE TABLE IF NOT EXISTS esProducts (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, spec VARCHAR(255), resources VARCHAR(255), price FLOAT NOT NULL, stock INT NOT NULL)")) 
     {
         echo "error in query - products table creation";
         return;
@@ -26,6 +26,12 @@ function Setup()
     }
 
     if (!Query("CREATE TABLE IF NOT EXISTS esOrders (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, product INT NOT NULL, user INT NOT NULL, addr VARCHAR(255), stat VARCHAR(255) NOT NULL")) 
+    {
+        echo "error in query - orders table creation";
+        return;
+    }
+
+    if (!Query("CREATE TABLE IF NOT EXISTS esImages (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, title INT NOT NULL, owner_id INT NOT NULL, refcount INT NOT NULL")) 
     {
         echo "error in query - orders table creation";
         return;
