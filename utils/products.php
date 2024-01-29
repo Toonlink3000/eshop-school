@@ -1,8 +1,10 @@
 <?php 
 namespace Products;
 
-require_once "../utils/config.php";
-require_once "../utils/database.php";
+require_once "config.php";
+require_once "database.php";
+
+\DB\Setup();
 
 function GetProducts() 
 {
@@ -15,6 +17,11 @@ function GetProducts()
     }
 
     return $result;
+}
+
+function AddProduct() 
+{
+    
 }
 
 ?>

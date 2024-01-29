@@ -9,7 +9,6 @@ $availableImages = scandir("../resources/");
 
 if (in_array($_GET["name"], $availableImages)) {
     $name = "../resources/" . $_GET["name"];
-    
 
     $fp = fopen($name, 'rb');
 

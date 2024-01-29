@@ -19,13 +19,13 @@ function Setup()
         return;
     }
 
-    if (!Query("CREATE TABLE IF NOT EXISTS esUsers (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(255), pass VARCHAR(255), salt VARCHAR(255), userimage VARCHAR(255) NOT NULL,  elevation INT")) 
+    if (!Query("CREATE TABLE IF NOT EXISTS esUsers (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(255), pass VARCHAR(255), userimage VARCHAR(255) NOT NULL, addr VARCHAR(255), elevation INT")) 
     {
         echo "error in query - user table creation";
         return;
     }
 
-    if (!Query("CREATE TABLE IF NOT EXISTS esOrders (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, product INT NOT NULL, user INT NOT NULL, addr, stat VARCHAR(255) NOT NULL")) 
+    if (!Query("CREATE TABLE IF NOT EXISTS esOrders (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, product INT NOT NULL, user INT NOT NULL, addr VARCHAR(255), stat VARCHAR(255) NOT NULL")) 
     {
         echo "error in query - orders table creation";
         return;
