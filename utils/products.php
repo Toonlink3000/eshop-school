@@ -45,9 +45,4 @@ function GetProduct(int $id)
     $result = \DB\Query("SELECT TOP 1 * FROM esProducts WHERE id = $id");
     return $result;
 }
-
-function 
-
-function 
-
 ?>

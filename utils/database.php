@@ -2,10 +2,17 @@
 namespace DB;
 
 $g_database = null;
+$is_setup = false;
 
 function Setup() 
 {
     global $g_database;
+    global $is_setup;
+
+    if ($is_setup === true) 
+    {
+        return;
+    }
 
     if (g_database == null) 
     {
@@ -36,6 +43,8 @@ function Setup()
         echo "error in query - orders table creation";
         return;
     }
+
+    $is_setup = true;
 }
 
 function Connect(string $hostname, string $username, string $password, string $database) 

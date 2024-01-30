@@ -1,9 +1,9 @@
 <?php 
-namespace Widgets;
+namespace TopBar;
 
 require_once "../utils/config.php";
 
-function CreateTopbar() 
+function Render() 
 {
     echo "<div class='topbar'>";
 

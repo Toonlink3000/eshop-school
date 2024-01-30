@@ -7,12 +7,12 @@ require_once "database.php";
 
 function StoreUploadedImage() 
 {
-
+    
 }
 
 function GetImage(string $name) 
 {
-    
+
 }
 
 

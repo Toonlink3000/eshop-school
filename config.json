@@ -1,5 +1,6 @@
 {
     "name": "Test",
+    "stylesheet": "global.css",
     "topbar": 
     {
         "Home": "index.php",
