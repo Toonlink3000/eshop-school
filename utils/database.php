@@ -67,4 +67,11 @@ function GetConnection()
     return $g_database;
 }
 
+function Escape(string $input) 
+{
+    global $g_database;
+
+    return $g_database->real_escape_string($input);
+}
+
 ?>

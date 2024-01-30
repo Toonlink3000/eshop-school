@@ -17,6 +17,7 @@ function GetOrders()
     return $result;
 }
 
+
 function OrderProduct(int $product_id, int $user_id, string $address_raw) 
 {l
     if (empty($_SESSION["username"])) 

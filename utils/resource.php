@@ -12,7 +12,7 @@ function StoreUploadedImage()
 
 function GetImage(string $name) 
 {
-
+    
 }
 
 
