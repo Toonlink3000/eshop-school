@@ -1,4 +1,75 @@
-.body 
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;500;600;700&display=swap');
+
+body 
 {
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(6, 0, 24);
+    margin: 0;
+    font-family: 'Overpass Mono', monospace;
+}
+
+#webcontent 
+{
+    margin: 10px;
+    font-family: 'Overpass Mono', monospace;
+    color: white;
+}
+
+#webcontent h1 
+{
+    text-align: center;
+}
+
+#webtitle 
+{
+    font-family: 'Righteous', sans-serif;
+}
+
+.topbar 
+{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: blueviolet;
+    overflow: hidden;
+    box-shadow: 10px rgb(38, 28, 67);
+}
+
+.topbar a 
+{
+    display: inline-block;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    font-family: 'Russo One', sans-serif;
+    font-weight: 300;
+}
+.topbar a:hover
+{
+    background-color: rgba(99, 23, 171, 1);
+} 
+
+#footer 
+{
+    background-color: blueviolet;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+
+}
+
+.footeritem 
+{
+    color: white;
+    text-align: center;
 }

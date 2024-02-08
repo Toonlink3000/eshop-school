@@ -9,17 +9,17 @@ session_start();
 
 function Login(string $username, string $password) 
 {
-    $hash = password_hash($password, PASSWORD_DEFAULT)
+    $hash = password_hash($password, PASSWORD_DEFAULT);
     $username_clean = \DB\GetConnection()->real_escape_string($username);
 
-    $result = Query("SELECT TOP 1 * FROM esUsers WHERE username = '$username_clean' AND pass = '$hash'");
+    $result = \DB\Query("SELECT TOP 1 * FROM esUsers WHERE username = '$username_clean' AND pass = '$hash'");
 
     if ($result == false) 
     {
         return null;
     }
 
-    $user = $result.fetch_assoc();
+    $user = $result->fetch_assoc();
 
     $_SESSION["username"] = $user["username"];
     $_SESSION["id"] = $user["id"];
@@ -80,7 +80,7 @@ function Checkout()
         }
         else 
         {
-            $user = $_SESSION["id"]
+            $user = $_SESSION["id"];
         }
 
         if (empty($_SESSION["address"])) 
@@ -96,5 +96,3 @@ function Checkout()
         return true;
     }
 }
-
-?>

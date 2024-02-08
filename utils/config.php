@@ -25,6 +25,8 @@ function GetObject(string $name)
 
 function GetRoot() 
 {
+    global $g_file;
+    
     return $g_file;
 }
 

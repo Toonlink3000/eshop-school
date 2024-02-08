@@ -1,12 +1,21 @@
 {
     "name": "Test",
     "stylesheet": "global.css",
+    "greeting": "Hello, ",
     "topbar": 
     {
         "Home": "index.php",
-        "Products": "products.php",
+        "Categories": "categories.php",
         "About": "about.php",
         "Contact": "contact.php"
     },
-    "copyright": "© 2024"
+    "database": 
+    {
+        "hostname": "localhost",
+        "username": "root",
+        "password": "",
+        "database": ""
+    },
+    "author": "Daniel Coats",
+    "copydate": "© 2024"
 }

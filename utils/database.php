@@ -14,13 +14,15 @@ function Setup()
         return;
     }
 
-    if (g_database == null) 
+    Connect(\Config\GetObject("hostname"), \Config\GetObject("username"), \Config\GetObject("password"), \Config\GetObject("database"));
+
+    if ($g_database == null) 
     {
         echo "database not connected";
         return;
     }
 
-    if (!Query("CREATE TABLE IF NOT EXISTS esProducts (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, spec VARCHAR(255), resources VARCHAR(255), price FLOAT NOT NULL, stock INT NOT NULL)")) 
+    if (!Query("CREATE TABLE IF NOT EXISTS esProducts (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, spec VARCHAR(255) NOT NULL, resources VARCHAR(255), price FLOAT NOT NULL, stock INT NOT NULL, category VARCHAR(255) NOT NULL")) 
     {
         echo "error in query - products table creation";
         return;
@@ -51,7 +53,7 @@ function Connect(string $hostname, string $username, string $password, string $d
 {
     global $g_database;
 
-    $g_database = mysqli($hostname, $username, $password, $database);
+    $g_database = new \mysqli($hostname, $username, $password, $database);
 
     Setup();
 }
@@ -82,5 +84,3 @@ function Escape(string $input)
 
     return $g_database->real_escape_string($input);
 }
-
-?>

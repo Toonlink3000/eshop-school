@@ -41,4 +41,3 @@ if (in_array($_GET["name"], $availableFiles)) {
     die();
 }
 
-?>
