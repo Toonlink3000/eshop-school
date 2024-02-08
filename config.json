@@ -12,9 +12,9 @@
     "database": 
     {
         "hostname": "localhost",
-        "username": "root",
-        "password": "",
-        "database": ""
+        "username": "eshop",
+        "password": "one",
+        "database": "eshop"
     },
     "author": "Daniel Coats",
     "copydate": "© 2024"

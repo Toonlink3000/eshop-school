@@ -23,11 +23,11 @@ function GetProducts()
 function GetProductsByCat(string $category)
 {
     $category_clean = \DB\Escape($category);
-    $result = \DB\Query("SELECT * FROM Products'");
+    $result = \DB\Query("SELECT * FROM esProducts");
 
     if ($result == null) 
     {
-        echo "error in query";
+        echo "error in query - get products";
         return null;
     }
 

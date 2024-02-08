@@ -7,6 +7,13 @@ body
     background-color: rgb(6, 0, 24);
     margin: 0;
     font-family: 'Overpass Mono', monospace;
+    color: white;
+}
+
+.productboximage 
+{
+    max-width: 300;
+    max-height: 300;
 }
 
 #webcontent 
@@ -60,7 +67,7 @@ body
 #footer 
 {
     background-color: blueviolet;
-    position: fixed;
+    position: stick;
     bottom: 0;
     left: 0;
     width: 100%;

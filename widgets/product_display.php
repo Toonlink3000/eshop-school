@@ -7,9 +7,18 @@ function Render(string $category)
 {
     $products = \Products\GetProductsByCat($category);
 
+    echo "<div class=\"productcontainer\">";
+
+    if ($products->num_rows === 0)  
+    {
+        echo "No products to display.</div>";
+        return;
+    }
+
     foreach ($products as $product) 
     {
-        $name = $product["name"];
+        $name = $product["title"];
+        $id = $product["id"];
         $resources = $product["resources"];
         $resarr = explode("|", $resources);
         $image = $resarr[0];
@@ -24,6 +33,8 @@ function Render(string $category)
         </div>
         ";
 
-        \BoxDisplay\Render
+        \BoxDisplay\RenderLinked($prodcode, "Navigate(\"product.php?id=$id\")");
     }
+
+    echo "</div>";
 }

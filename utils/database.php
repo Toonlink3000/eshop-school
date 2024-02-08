@@ -1,6 +1,8 @@
 <?php 
 namespace DB;
 
+require_once "config.php";
+
 $g_database = null;
 $is_setup = false;
 
@@ -13,34 +15,35 @@ function Setup()
     {
         return;
     }
-
-    Connect(\Config\GetObject("hostname"), \Config\GetObject("username"), \Config\GetObject("password"), \Config\GetObject("database"));
+    $dbinf = \Config\GetObject("database");
+    Connect($dbinf["hostname"], $dbinf["username"], $dbinf["password"], $dbinf["database"]);
 
     if ($g_database == null) 
     {
         echo "database not connected";
         return;
     }
-
-    if (!Query("CREATE TABLE IF NOT EXISTS esProducts (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, spec VARCHAR(255) NOT NULL, resources VARCHAR(255), price FLOAT NOT NULL, stock INT NOT NULL, category VARCHAR(255) NOT NULL")) 
+    $tab = Query("CREATE TABLE IF NOT EXISTS esProducts (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, spec VARCHAR(255) NOT NULL, resources VARCHAR(255), price FLOAT NOT NULL, stock INT NOT NULL, category VARCHAR(255) NOT NULL)");
+    if (!$tab) 
     {
         echo "error in query - products table creation";
+        var_dump($tab);
         return;
     }
 
-    if (!Query("CREATE TABLE IF NOT EXISTS esUsers (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(255), pass VARCHAR(255), userimage VARCHAR(255) NOT NULL, addr VARCHAR(255), elevation INT")) 
+    if (!Query("CREATE TABLE IF NOT EXISTS esUsers (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(255), pass VARCHAR(255), userimage VARCHAR(255) NOT NULL, addr VARCHAR(255), elevation INT)")) 
     {
         echo "error in query - user table creation";
         return;
     }
 
-    if (!Query("CREATE TABLE IF NOT EXISTS esOrders (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, product INT NOT NULL, user INT NOT NULL, addr VARCHAR(255), stat VARCHAR(255) NOT NULL")) 
+    if (!Query("CREATE TABLE IF NOT EXISTS esOrders (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, product INT NOT NULL, user INT NOT NULL, addr VARCHAR(255) NOT NULL, stat VARCHAR(255) NOT NULL)")) 
     {
         echo "error in query - orders table creation";
         return;
     }
 
-    if (!Query("CREATE TABLE IF NOT EXISTS esImages (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, title INT NOT NULL, owner_id INT NOT NULL, refcount INT NOT NULL")) 
+    if (!Query("CREATE TABLE IF NOT EXISTS esImages (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, title INT NOT NULL, owner_id INT NOT NULL, refcount INT NOT NULL)")) 
     {
         echo "error in query - orders table creation";
         return;
@@ -54,8 +57,6 @@ function Connect(string $hostname, string $username, string $password, string $d
     global $g_database;
 
     $g_database = new \mysqli($hostname, $username, $password, $database);
-
-    Setup();
 }
 
 function Query(string $query) 
