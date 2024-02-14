@@ -24,6 +24,11 @@ if (in_array($_GET["name"], $availableFiles)) {
             header("Content-Type: text/css");
             header("Content-Length: " . filesize($name));
         }
+        elseif (str_ends_with($name, ".js")) // is js
+        {
+            header("Content-Type: text/javascript");
+            header("Content-Length: " . filesize($name));
+        }
         else // everything else is text
         {
             header("Content-Type: text/plain");

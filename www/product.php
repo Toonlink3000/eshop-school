@@ -17,11 +17,27 @@ require_once "../widgets/script.php";
     <body>
         <?php 
             \TopBar\Render();
+
+            if (isset($_GET["id"]))
+            {
+                $product = \Products\GetProduct(intval($_GET["id"]));
+                if ($product == false) 
+                {
+                    die("Invalid product");
+                }
+            }
         ?>
         <div id="webcontent">
-            <h1>Hello, world!</h1>
             <?php 
-                \ProductDisplay\Render("main"); 
+                if (!empty($product)) 
+                {
+                    $name = $product["title"];
+                    echo "<h1>$name</h1>";
+                }
+
+            ?>
+            <?php 
+                //\ProductDisplay\Render("main"); 
             ?>
         </div>
         <?php 

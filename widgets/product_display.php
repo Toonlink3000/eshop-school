@@ -29,7 +29,7 @@ function Render(string $category)
 
         </img>
         <div class=\"productboxname\">
-            $name;
+            $name
         </div>
         ";
 

@@ -57,6 +57,10 @@ function ModifyProduct(int $id, string $title, string $spec, string $resources, 
 
 function GetProduct(int $id) 
 {
-    $result = \DB\Query("SELECT TOP 1 * FROM esProducts WHERE id = $id");
-    return $result;
+    $result = \DB\Query("SELECT * FROM esProducts WHERE id = $id");
+    if ($result == false) 
+    {
+        return false;
+    }
+    return $result->fetch_assoc();
 }
