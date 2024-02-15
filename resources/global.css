@@ -10,6 +10,27 @@ body
     color: white;
 }
 
+.hidden 
+{
+    display: none;
+}
+
+#basketcontainer 
+{
+    display: none;
+    background-color: rgba(128, 128, 128, 1);
+    position: absolute;
+    right: 0;
+    width: 25%;
+    padding: 10px;
+}
+
+.basketelement 
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .productcontainer
 {
     margin: 10px;
@@ -24,19 +45,26 @@ body
     flex-direction: column;
     align-items: center;
     margin: 10px;
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     background-color: rgb(53, 43, 57);
     border-radius: 10px;
     outline:rgb(115, 93, 124) 10px;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.boxdisplay:hover 
+{
+    width: 320px;
+    height: 320px;
 }
 
 .productboximage 
 {
     display: block;
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 250px;
+    max-height: 250px;
     width: auto;
     height: auto;
 }
@@ -90,7 +118,15 @@ body
     font-size: 2em;
     font-family: 'Russo One', sans-serif;
     font-weight: 300;
+    transition: 0.2s;
+
+    cursor: pointer;
 }
+.right 
+{
+    float: right;
+}
+
 .topbar a:hover
 {
     background-color: rgba(99, 23, 171, 1);
@@ -104,7 +140,6 @@ body
     left: 0;
     width: 100%;
     padding: 10px;
-
 }
 
 .footeritem 

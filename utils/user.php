@@ -26,6 +26,15 @@ function Login(string $username, string $password)
     $_SESSION["address"] = $user["addr"];
 }
 
+function IsLoggedIn() 
+{
+    if (isset($_SESSION["username"]) && isset($_SESSION["id"])) 
+    {
+        return true;
+    }
+    return false;
+}
+
 function Logout() 
 {
     unset($_SESSION["username"]);
@@ -38,7 +47,7 @@ function CurrentBasket()
     {
         return $_SESSION["basket"];
     }
-    return null;
+    return array();
 }
 
 function CurrentOrders() 
@@ -57,7 +66,7 @@ function CurrentUsername()
     {
         return $_SESSION["username"];
     }
-    return null;
+    return "Guest";
 }
 
 function AddToBasket(int $product_id)
@@ -66,9 +75,11 @@ function AddToBasket(int $product_id)
     {
         array_push($_SESSION["basket"], $product_id);
     }
-    $_SESSION["basket"] = array(0 => $product_id);
+    else
+    {
+        $_SESSION["basket"] = array($product_id);
+    }
 }
-
 // 
 function Checkout() 
 {

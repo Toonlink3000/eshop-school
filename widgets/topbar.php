@@ -2,6 +2,7 @@
 namespace TopBar;
 
 require_once "../utils/config.php";
+require_once "../utils/user.php";
 
 function Render() 
 {
@@ -14,5 +15,17 @@ function Render()
         echo "<a href='" . $link . "'>" . $item . "</a>";
     }
 
+    $greeting = \Config\GetObject("greeting");
+    $username = \User\CurrentUsername();
+    echo "<a class=\"right\">$greeting$username</a>";
+    echo "<a id=\"basketbutton\" class=\"right\" onclick=\"ShowBasket()\">Basket</a>";
+
     echo "</div>";
+
+    RenderBasketContainer();
+}
+
+function RenderBasketContainer() 
+{
+    echo "<div id=\"basketcontainer\" hidden></div>";
 }

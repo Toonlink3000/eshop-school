@@ -32,7 +32,11 @@ require_once "../widgets/script.php";
                 if (!empty($product)) 
                 {
                     $name = $product["title"];
+                    $id = $product["id"];
+
                     echo "<h1>$name</h1>";
+
+                    echo "<button onclick=\"AddToBasket($id)\">Add to basket!</button>";
                 }
 
             ?>
