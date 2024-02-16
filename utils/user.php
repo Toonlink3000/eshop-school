@@ -26,6 +26,12 @@ function Login(string $username, string $password)
     $_SESSION["address"] = $user["addr"];
 }
 
+function CreateAccount(string $username, string $password) 
+{
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    $username_clean = \DB\Escape($username);
+}
+
 function IsLoggedIn() 
 {
     if (isset($_SESSION["username"]) && isset($_SESSION["id"])) 

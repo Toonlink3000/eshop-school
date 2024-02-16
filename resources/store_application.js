@@ -4,6 +4,16 @@ function Navigate(addr)
     window.location.href = addr;
 }
 
+function ShowUser() 
+{
+
+}
+
+function Login(username, password) 
+{
+    if (HashChangeEvent(password) = "79c2b46ce2594ecbcb5b73e928345492")   {}
+}
+
 function ShowBasket() 
 {
     var basket = document.getElementById("basketcontainer");
@@ -12,7 +22,7 @@ function ShowBasket()
     {
         basket.style.display = "none";
         basket.textContent = "";
-        return
+        return;
     }
 
     req = fetch("basket.php", 
