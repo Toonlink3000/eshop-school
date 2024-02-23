@@ -6,7 +6,8 @@ require_once "../widgets/product_display.php";
 require_once "../widgets/script.php";
 require_once "../utils/user.php";
 
-require_once "../widgets/admin/action_ribbon.php"
+require_once "../widgets/admin/action_ribbon.php";
+require_once "../widgets/admin/product_creator.php";
 
 ?>
 <!DOCTYPE html>
@@ -26,7 +27,11 @@ require_once "../widgets/admin/action_ribbon.php"
                 <h1>Access Denied.</h1>
             <? else: ?>
                 <h1>Administration Panel</h1>
-                <? \ActionRibbon\Render(); ?>
+                <? 
+                \ActionRibbon\Render(); 
+                \ProductCreator\Render();
+                ?>
+
             <? endif; ?>
         </div>
         <?php 

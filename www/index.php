@@ -19,7 +19,7 @@ require_once "../widgets/script.php";
             \TopBar\Render();
         ?>
         <div id="webcontent">
-            <h1>Hello, world!</h1>
+            <h1>Simply the best!</h1>
             <?php 
                 \ProductDisplay\Render("all"); 
             ?>

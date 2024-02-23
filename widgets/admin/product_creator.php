@@ -1,6 +1,5 @@
 <?php
 namespace ProductCreator;
-require_once "../core.php";
 
 function Render() 
 {
@@ -13,9 +12,9 @@ function Render()
         <label>Resources: </label>
         <input type="text">
         <label>Price: </label>
-        <input type="number">
+        <input value="100" type="number">
         <label>Stock: </label>
-        <input type="number">
+        <input type="number" value="1">
         <label>Category: </label>
         <input type="text">
     </form>
