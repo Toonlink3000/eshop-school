@@ -25,6 +25,11 @@ function ShowUser()
     user.style.display = "block";
 }
 
+function Checkout() 
+{
+    
+}
+
 function HideUser() 
 {
     var user = document.getElementById("user_dropdown");

@@ -6,13 +6,15 @@ require_once "../widgets/product_display.php";
 require_once "../widgets/script.php";
 require_once "../utils/user.php";
 
+require_once "../widgets/admin/action_ribbon.php"
+
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <?php 
-            \Script\Render();
-            \Style\Render(); 
+            \Script\RenderAdmin();
+            \Style\RenderAdmin(); 
         ?>
     </head>
     <body>
@@ -24,6 +26,7 @@ require_once "../utils/user.php";
                 <h1>Access Denied.</h1>
             <? else: ?>
                 <h1>Administration Panel</h1>
+                <? \ActionRibbon\Render(); ?>
             <? endif; ?>
         </div>
         <?php 
