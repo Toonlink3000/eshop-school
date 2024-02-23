@@ -4,6 +4,7 @@ require_once "../widgets/style.php";
 require_once "../widgets/footer.php";
 require_once "../widgets/product_display.php";
 require_once "../widgets/script.php";
+require_once "../utils/user.php";
 
 ?>
 <!DOCTYPE html>
@@ -19,10 +20,11 @@ require_once "../widgets/script.php";
             \TopBar\Render();
         ?>
         <div id="webcontent">
-            <h1>Hello, world!</h1>
-            <?php 
-                \ProductDisplay\Render("all"); 
-            ?>
+            <? if (\User\CurrentElevation() != 10): ?>
+                <h1>Access Denied.</h1>
+            <? else: ?>
+                <h1>Administration Panel</h1>
+            <? endif; ?>
         </div>
         <?php 
             \Footer\Render();

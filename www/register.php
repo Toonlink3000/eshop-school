@@ -40,13 +40,15 @@ if (isset($_POST["username"]) && isset($_POST["password"])) // user is trying to
                     echo "<h2>Registration failed, please contact an administrator to resolve the issue</h2>";
                 }
             ?>
-            <form method="POST" action="register.php">
+            <div class="center">
+            <form id="register_box" method="POST" action="register.php">
                 <label><?php echo \Config\GetObject("usernameprompt"); ?></label>
                 <input type="text" name="username"><br>
                 <label><?php echo \Config\GetObject("passwordprompt"); ?></label>
                 <input type="password" name="password"><br>
                 <button type="submit"><?php echo \Config\GetObject("registerbutton"); ?></button>
             </form>
+            </div>
         </div>
         <?php 
             \Footer\Render();

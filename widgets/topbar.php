@@ -18,7 +18,7 @@ function Render()
 
     $greeting = \Config\GetObject("greeting");
     $username = \User\CurrentUsername();
-    echo "<a class=\"right\">$greeting$username</a>";
+    echo "<a class=\"right\" onclick=\"ToggleUser()\">$greeting$username</a>";
     echo "<a id=\"basketbutton\" class=\"right\" onclick=\"ShowBasket()\">Basket</a>";
 
     echo "</div>";

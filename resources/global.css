@@ -10,13 +10,111 @@ body
     color: white;
 }
 
-#user_dropdown 
+a 
 {
+    color: rgb(95, 0, 95);
+}
+
+.center 
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
 
 }
-#user_dropdown a
-{
 
+.login_box 
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.login_title 
+{
+    margin: 10px;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.login_box input
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 95%;
+}
+
+#register_box
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#register_box *
+{
+    display: block;
+    margin: 5px;
+}
+
+input 
+{
+    padding: 5px;
+    width: 200px;
+    height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+button 
+{
+    background-color: purple;
+    color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right:20px;
+    border-radius: 5px;
+    border-color: rgb(73, 0, 73);
+    transition: 0.2s;
+    font-weight: bold;
+    cursor: pointer;
+}
+button:hover
+{
+    background-color: rgb(73, 0, 73);
+}
+
+#user_dropdown 
+{
+    display: none;
+    background-color: rgba(128, 128, 128, 1);
+    position: absolute;
+    right: 0;
+    width: 25%;
+    padding: 10px;
+}
+#user_dropdown .user_button
+{
+    display: block;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    color: white;
+    transition: 0.2s;
+}
+#user_dropdown .user_button:hover
+{
+    display: block;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    background-color: rgb(61, 61, 61);
 }
 .hidden 
 {

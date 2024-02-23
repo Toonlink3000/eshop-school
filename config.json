@@ -16,7 +16,7 @@
     "adminbuttons": 
     {
         "Orders": "orders.php",
-        "Administration Zone": "admin.php",
+        "Admin Panel": "admin.php",
         "Logout": "logout.php"
     },
     "topbar": 

@@ -4,18 +4,36 @@ function Navigate(addr)
     window.location.href = addr;
 }
 
-function ShowUser() 
+function ToggleUser() 
 {
-
+    var user = document.getElementById("user_dropdown");
+    if (user.style.display === "none") 
+    {
+        ShowUser();
+        return;
+    }
+    HideUser();
 }
 
-function Login(username, password) 
+function ShowUser() 
 {
-    if (HashChangeEvent(password) = "79c2b46ce2594ecbcb5b73e928345492")   {}
+    // hide the basket
+    var basket = document.getElementById("basketcontainer") 
+    basket.style.display = "none";
+
+    var user = document.getElementById("user_dropdown");
+    user.style.display = "block";
+}
+
+function HideUser() 
+{
+    var user = document.getElementById("user_dropdown");
+    user.style.display = "none";
 }
 
 function ShowBasket() 
 {
+    HideUser();
     var basket = document.getElementById("basketcontainer");
 
     if (basket.style.display === "block") 
@@ -72,6 +90,15 @@ function AddToBasket(id)
         if (response.status === false) 
         {
             console.log("Error adding to basket");
+        }
+        else 
+        {
+            let basket = document.getElementById("basketcontainer");
+            if (basket.style.display == "block") 
+            {
+                ShowBasket();
+                ShowBasket();
+            }
         }
     });
 }

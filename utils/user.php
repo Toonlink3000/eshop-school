@@ -36,6 +36,7 @@ function Login(string $username, string $password)
     $_SESSION["id"] = $user["id"];
     $_SESSION["address"] = $user["addr"];
     $_SESSION["elevation"] = $user["elevation"];
+
     return true;
 }
 
@@ -44,7 +45,7 @@ function CreateAccount(string $username, string $password)
     $hash = \DB\Escape(password_hash($password, PASSWORD_BCRYPT));
     $username_clean = \DB\Escape($username);
 
-    $result = \DB\Query("INSERT INTO esUsers (id, username, pass, userimage, addr, elevation) VALUES (NULL, '$username_clean', '$hash', 'NONE', 'NONE', 0)");
+    $result = \DB\Query("INSERT INTO esUsers (id, username, pass, userimage, addr, elevation) VALUES (NULL, '$username_clean', '$hash', 'NONE', 'NONE', 1)");
 
     if ($result == false) 
     {
@@ -66,7 +67,6 @@ function Logout()
 {
     unset($_SESSION["username"]);
     unset($_SESSION["id"]);
-    unset($_SESSION["basket"]);
     unset($_SESSION["elevation"]);
 }
 
@@ -95,7 +95,7 @@ function CurrentElevation()
     {
         return $_SESSION["elevation"];
     }
-    return -1;
+    return 0;
 }
 
 function CurrentUsername() 
