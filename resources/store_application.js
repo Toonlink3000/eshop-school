@@ -20,6 +20,7 @@ function ShowUser()
     // hide the basket
     var basket = document.getElementById("basketcontainer") 
     basket.style.display = "none";
+    basket.textContent = "";
 
     var user = document.getElementById("user_dropdown");
     user.style.display = "block";
@@ -27,7 +28,7 @@ function ShowUser()
 
 function Checkout() 
 {
-    
+    document.location = "checkout.php";
 }
 
 function HideUser() 
@@ -74,6 +75,13 @@ function ShowBasket()
     
             basket.appendChild(newnode);
         });
+        // add checkout button
+        var newnode = document.createElement("button");
+        newnode.setAttribute("onclick", "Checkout()");
+        newnode.textContent = "Checkout";
+        newnode.setAttribute("class", "checkout_button");
+
+        basket.appendChild(newnode);
         basket.style.display = "block";
         
     });

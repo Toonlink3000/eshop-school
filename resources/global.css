@@ -40,6 +40,11 @@ a
     font-weight: bold;
 }
 
+.checkout_button 
+{
+    width: 100%;
+}
+
 .login_box input
 {
     margin-top: 10px;

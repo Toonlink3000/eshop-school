@@ -68,6 +68,7 @@ function Logout()
     unset($_SESSION["username"]);
     unset($_SESSION["id"]);
     unset($_SESSION["elevation"]);
+    unset($_SESSION["address"]);
 }
 
 function CurrentBasket() 
@@ -123,7 +124,7 @@ function Checkout()
 {
     if (!empty($_SESSION["basket"])) 
     {
-        if (empty($_SESSION["user"])) 
+        if (empty($_SESSION["id"])) 
         {
             $user = -1;
         }
@@ -142,6 +143,7 @@ function Checkout()
         {
             \Order\OrderProduct($item, $user, $address);
         }
+        $_SESSION["basket"] = array();
         return true;
     }
 }

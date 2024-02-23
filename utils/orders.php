@@ -41,12 +41,12 @@ function OrderProduct(int $product_id, int $user_id, string $address_raw)
 
 function GetUserOrders() 
 {
-    if (empty($_SESSION["username"])) 
+    if (empty($_SESSION["id"])) 
     {
         return null;
     }
-
-    $result = \DB\Query("SELECT * FROM esOrders WHERE user=" + \DB\GetConnection()->real_escape_string($_SESSION["username"]));
+    $id = $_SESSION["id"];
+    $result = \DB\Query("SELECT * FROM esOrders WHERE user=$id");
 
     return $result;
 }
