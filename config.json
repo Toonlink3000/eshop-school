@@ -2,6 +2,23 @@
     "name": "Test",
     "stylesheet": "global.css",
     "greeting": "Hello, ",
+    "loginprompt": "Login: (or <a href=\"register.php\">register</a>)",
+    "usernameprompt": "Username: ",
+    "passwordprompt": "Password: ",
+    "registerbutton": "Register",
+    "loginbutton": "Login",
+    "loginsuccess": "Login succesfull, redirecting to index...",
+    "userbuttons": 
+    {
+        "Orders": "orders.php",
+        "Logout": "logout.php"
+    },
+    "adminbuttons": 
+    {
+        "Orders": "orders.php",
+        "Administration Zone": "admin.php",
+        "Logout": "logout.php"
+    },
     "topbar": 
     {
         "Home": "index.php",
@@ -12,10 +29,11 @@
     "database": 
     {
         "hostname": "localhost",
-        "username": "eshop",
-        "password": "one",
+        "username": "root",
+        "password": "",
         "database": "eshop"
     },
+
     "author": "Daniel Coats",
     "copydate": "© 2024"
 }

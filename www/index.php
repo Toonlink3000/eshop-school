@@ -21,7 +21,7 @@ require_once "../widgets/script.php";
         <div id="webcontent">
             <h1>Hello, world!</h1>
             <?php 
-                \ProductDisplay\Render("main"); 
+                \ProductDisplay\Render("all"); 
             ?>
         </div>
         <?php 

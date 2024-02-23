@@ -3,6 +3,7 @@ namespace TopBar;
 
 require_once "../utils/config.php";
 require_once "../utils/user.php";
+require_once "user_dropdown.php";
 
 function Render() 
 {
@@ -23,6 +24,7 @@ function Render()
     echo "</div>";
 
     RenderBasketContainer();
+    \UserDropdown\Render();
 }
 
 function RenderBasketContainer() 

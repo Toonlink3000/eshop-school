@@ -19,8 +19,14 @@ if ($g_file == null)
 function GetObject(string $name) 
 {
     global $g_file;
-    
-    return $g_file[$name];
+    try 
+    {
+        return $g_file[$name];
+    }
+    catch (\Exception $e) 
+    {
+        return "Undefined";
+    }
 }
 
 function GetRoot() 
@@ -29,5 +35,3 @@ function GetRoot()
     
     return $g_file;
 }
-
-?>

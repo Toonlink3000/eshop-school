@@ -23,8 +23,15 @@ function GetProducts()
 function GetProductsByCat(string $category)
 {
     $category_clean = \DB\Escape($category);
-    $result = \DB\Query("SELECT * FROM esProducts");
-
+    if ($category_clean == "all") 
+    {
+        $result = \DB\Query("SELECT * FROM esProducts");
+    }
+    else 
+    {
+        $result = \DB\Query("SELECT * FROM esProducts WHERE category LIKE '%|$category_clean|%'");
+    }
+    
     if ($result == null) 
     {
         echo "error in query - get products";

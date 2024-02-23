@@ -9,27 +9,48 @@ session_start();
 
 function Login(string $username, string $password) 
 {
-    $hash = password_hash($password, PASSWORD_DEFAULT);
+    //$hash = password_hash($password, PASSWORD_BCRYPT);
     $username_clean = \DB\GetConnection()->real_escape_string($username);
 
-    $result = \DB\Query("SELECT TOP 1 * FROM esUsers WHERE username = '$username_clean' AND pass = '$hash'");
-
+    $result = \DB\Query("SELECT * FROM esUsers WHERE username = '$username_clean'");
     if ($result == false) 
     {
         return null;
     }
 
-    $user = $result->fetch_assoc();
+    $found = false;
+    while($user = $result->fetch_assoc()) 
+    {
+        if (password_verify($password, $user["pass"])) 
+        {
+            $found = true;
+            break;
+        }
+    }
+    if (!$found)
+    {
+        return null;
+    }
 
     $_SESSION["username"] = $user["username"];
     $_SESSION["id"] = $user["id"];
     $_SESSION["address"] = $user["addr"];
+    $_SESSION["elevation"] = $user["elevation"];
+    return true;
 }
 
 function CreateAccount(string $username, string $password) 
 {
-    $hash = password_hash($password, PASSWORD_DEFAULT);
+    $hash = \DB\Escape(password_hash($password, PASSWORD_BCRYPT));
     $username_clean = \DB\Escape($username);
+
+    $result = \DB\Query("INSERT INTO esUsers (id, username, pass, userimage, addr, elevation) VALUES (NULL, '$username_clean', '$hash', 'NONE', 'NONE', 0)");
+
+    if ($result == false) 
+    {
+        return null;
+    }
+    return Login($username, $password);
 }
 
 function IsLoggedIn() 
@@ -45,6 +66,8 @@ function Logout()
 {
     unset($_SESSION["username"]);
     unset($_SESSION["id"]);
+    unset($_SESSION["basket"]);
+    unset($_SESSION["elevation"]);
 }
 
 function CurrentBasket() 
@@ -64,6 +87,15 @@ function CurrentOrders()
     }
     return null;
     
+}
+
+function CurrentElevation() 
+{
+    if (!empty($_SESSION["elevation"])) 
+    {
+        return $_SESSION["elevation"];
+    }
+    return -1;
 }
 
 function CurrentUsername() 
