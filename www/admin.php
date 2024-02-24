@@ -29,6 +29,14 @@ require_once "../widgets/admin/product_creator.php";
                 <h1>Administration Panel</h1>
                 <? 
                 \ActionRibbon\Render(); 
+
+                // make sure to sanitize the message! (no XSS attacks here!)
+                if (isset($_GET["message"])) 
+                {
+                    $message_clean = $_GET["message"];
+                    echo "Status: " . $message_clean;
+                }
+
                 \ProductCreator\Render();
                 ?>
 

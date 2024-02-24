@@ -41,13 +41,14 @@ function GetProductsByCat(string $category)
     return $result;
 }
 
-function CreateProduct(string $title, string $spec, string $resources, float $price, int $stock) 
+function CreateProduct(string $title, string $spec, string $resources, float $price, int $stock, string $category) 
 {
     $title_clean = \DB\Escape($title);
     $spec_clean = \DB\Escape($spec);
     $resources_clean = \DB\Escape($resources);
+    $category_clean = \DB\Escape($category);
 
-    $result = \DB\Query("INSERT INTO esProducts (id, title, spec, resources, price, stock) VALUES (NULL, '$title_clean', '$spec_clean', '$resources_clean', $price, $stock)");
+    $result = \DB\Query("INSERT INTO esProducts (id, title, spec, resources, price, stock, category) VALUES (NULL, '$title_clean', '$spec_clean', '$resources_clean', $price, $stock, '$category_clean')");
     return $result;
 }
 
