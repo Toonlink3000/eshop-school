@@ -1,8 +1,8 @@
 <?php 
 namespace User;
 
-require_once "database.php";
-require_once "orders.php";
+require_once "../utils/database.php";
+require_once "../utils/orders.php";
 
 session_start();
 \DB\Setup();

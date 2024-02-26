@@ -2,6 +2,8 @@
 require_once "../widgets/topbar.php";
 require_once "../widgets/style.php";
 require_once "../widgets/footer.php";
+require_once "../widgets/product_display.php";
+require_once "../widgets/script.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,7 +17,9 @@ require_once "../widgets/footer.php";
             \TopBar\Render();
         ?>
         <div id="webcontent">
-            
+        <?php 
+                \ProductDisplay\Render("Lidi"); 
+            ?>
         </div>
         <?php 
             \Footer\Render();

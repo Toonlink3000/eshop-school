@@ -29,8 +29,8 @@
     "database": 
     {
         "hostname": "localhost",
-        "username": "root",
-        "password": "",
+        "username": "eshop",
+        "password": "1234",
         "database": "eshop"
     },
 
