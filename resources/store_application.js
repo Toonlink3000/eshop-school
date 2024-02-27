@@ -6,7 +6,7 @@ function Navigate(addr)
 
 function ToggleUser() 
 {
-    var user = document.getElementById("user_dropdown");
+    let user = document.getElementById("user_dropdown");
     if (user.style.display === "none") 
     {
         ShowUser();
@@ -18,11 +18,11 @@ function ToggleUser()
 function ShowUser() 
 {
     // hide the basket
-    var basket = document.getElementById("basketcontainer") 
+    let basket = document.getElementById("basketcontainer") 
     basket.style.display = "none";
     basket.textContent = "";
 
-    var user = document.getElementById("user_dropdown");
+    let user = document.getElementById("user_dropdown");
     user.style.display = "block";
 }
 
@@ -33,14 +33,14 @@ function Checkout()
 
 function HideUser() 
 {
-    var user = document.getElementById("user_dropdown");
+    let user = document.getElementById("user_dropdown");
     user.style.display = "none";
 }
 
 function ShowBasket() 
 {
     HideUser();
-    var basket = document.getElementById("basketcontainer");
+    let basket = document.getElementById("basketcontainer");
 
     if (basket.style.display === "block") 
     {
@@ -60,23 +60,25 @@ function ShowBasket()
         if (response.status === false ) 
         {
             console.log("WHAT");
-            var newnode = document.createElement("div")
+            let newnode = document.createElement("div")
             newnode.setAttribute("class", "basketelement")
             newnode.textContent = "No items";
         
             basket.appendChild(newnode);
+            console.log("sfdsdfsd");
+            basket.style.display = "block";
             return;
         }
     
-        var items = response.items.forEach(element => {
-            var newnode = document.createElement("div")
+        let items = response.items.forEach(element => {
+            let newnode = document.createElement("div")
             newnode.setAttribute("class", "basketelement")
             newnode.textContent = element;
     
             basket.appendChild(newnode);
         });
         // add checkout button
-        var newnode = document.createElement("button");
+        let newnode = document.createElement("button");
         newnode.setAttribute("onclick", "Checkout()");
         newnode.textContent = "Checkout";
         newnode.setAttribute("class", "checkout_button");

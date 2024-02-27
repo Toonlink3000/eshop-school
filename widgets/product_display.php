@@ -21,7 +21,15 @@ function Render(string $category)
         $id = $product["id"];
         $resources = $product["resources"];
         $resarr = explode("|", $resources);
-        $image = $resarr[0];
+        if (isset($resarr[1])) 
+        {
+            $image = $resarr[1];
+        }
+        else 
+        {
+            $image = "error.png";
+        }
+        
 
         $prodcode = 
         "

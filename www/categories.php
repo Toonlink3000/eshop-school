@@ -18,7 +18,7 @@ require_once "../widgets/script.php";
         ?>
         <div id="webcontent">
         <?php 
-                \ProductDisplay\Render("Lidi"); 
+                \ProductDisplay\Render("Okay"); 
             ?>
         </div>
         <?php 

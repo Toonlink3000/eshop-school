@@ -43,7 +43,7 @@ function Login(string $username, string $password)
 function CreateAccount(string $username, string $password) 
 {
     $hash = \DB\Escape(password_hash($password, PASSWORD_BCRYPT));
-    $username_clean = \DB\Escape($username);
+    $username_clean = strip_tags(\DB\Escape($username));
 
     $result = \DB\Query("INSERT INTO esUsers (id, username, pass, userimage, addr, elevation) VALUES (NULL, '$username_clean', '$hash', 'NONE', 'NONE', 1)");
 

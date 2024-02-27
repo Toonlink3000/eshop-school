@@ -33,7 +33,7 @@ require_once "../widgets/admin/product_creator.php";
                 // make sure to sanitize the message! (no XSS attacks here!)
                 if (isset($_GET["message"])) 
                 {
-                    $message_clean = $_GET["message"];
+                    $message_clean = strip_tags($_GET["message"]);
                     echo "Status: " . $message_clean;
                 }
 
