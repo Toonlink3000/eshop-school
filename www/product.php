@@ -33,6 +33,22 @@ require_once "../widgets/script.php";
                 {
                     $name = $product["title"];
                     $id = $product["id"];
+                    $images = explode("|", $product["resources"]);
+                    $disp = array();
+
+                    ?> 
+                    <div id="product_images">
+                    <?
+                    foreach ($images as $image) 
+                    {
+                        if ($image != "") 
+                        {
+                            echo "<img src=\"resources.php?name=$image\">"
+                        }
+                    }
+                    ?> 
+                    <div id="product_images">
+                    <?
 
                     echo "<h1>$name</h1>";
 
