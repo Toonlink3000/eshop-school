@@ -43,7 +43,7 @@ require_once "../widgets/script.php";
                     {
                         if ($image != "") 
                         {
-                            echo "<img src=\"resources.php?name=$image\">"
+                            echo "<img src=\"resources.php?name=$image\">";
                         }
                     }
                     ?> 

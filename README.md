@@ -1,6 +1,7 @@
 # School project (terribly done)
 
-```{
+```
+{
     "name": "Test",
     "stylesheet": "global.css",
     "greeting": "Hello, ",
