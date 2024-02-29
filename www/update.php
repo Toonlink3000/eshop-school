@@ -31,6 +31,7 @@ require_once "../widgets/admin/product_creator.php";
                 exec("cd ..");
                 exec("bash update.sh");
                 ?>
+                ell oworld
 
             <? endif; ?>
         </div>
