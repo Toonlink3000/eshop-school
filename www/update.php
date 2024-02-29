@@ -29,7 +29,7 @@ require_once "../widgets/admin/product_creator.php";
                 <h1>Updating...</h1>
                 <? 
                 exec("cd ..");
-                exec("bash update.sh");
+                echo exec("bash update.sh");
                 ?>
                 ell oworld
 
