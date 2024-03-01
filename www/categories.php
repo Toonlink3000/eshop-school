@@ -10,6 +10,7 @@ require_once "../widgets/script.php";
     <head>
         <?php 
             \Style\Render(); 
+            \Script\Render();
         ?>
     </head>
     <body>

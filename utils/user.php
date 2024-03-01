@@ -54,6 +54,24 @@ function CreateAccount(string $username, string $password)
     return Login($username, $password);
 }
 
+function SetElevation(int $id, int $ele) 
+{
+    $result = \DB\Query("UPDATE esUsers SET elevation=$ele WHERE id=$id");
+    return $result;
+}
+
+function GetAllAccounts() 
+{
+    $result = \DB\Query("SELECT * FROM esUsers");
+    return $result;
+}
+
+function DeleteAccount(int $id) 
+{
+    $result = \DB\Query("DELETE FROM esUsers WHERE id=$id");
+    return $result;
+}
+
 function IsLoggedIn() 
 {
     if (isset($_SESSION["username"]) && isset($_SESSION["id"])) 

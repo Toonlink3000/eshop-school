@@ -1,11 +1,20 @@
 <?php 
 require_once "../utils/user.php";
 
-$status = \User\Checkout();
 
-if ($status == false) 
+if (\User\GetCurrentElevation > -1) 
 {
-    die("err");
+    $status = \User\Checkout();
+
+    if ($status == false) 
+    {
+        die("err");
+    }
+    header("Location: index.php");
+    die("done");
 }
-header("Location: index.php");
-die("done");
+
+else 
+{
+    die "access denied.";
+}
