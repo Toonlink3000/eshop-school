@@ -19,16 +19,17 @@ require_once "../utils/user.php";
         <?php 
             \TopBar\Render();
 
+            if (\User\CurrentElevation() > -1 and isset($_GET["delete"]))
+            {
+                \Products\DeleteProduct(intval($_GET["delete"]));
+            }
+
             if (isset($_GET["id"]))
             {
                 $product = \Products\GetProduct(intval($_GET["id"]));
                 if ($product == false) 
                 {
                     die("Invalid product");
-                }
-                if (\User\CurrentElevation() > -1 and isset($_GET["delete"]))
-                {
-                    \Products\DeleteProduct(intval($_GET["delete"]));
                 }
             }
         ?>
