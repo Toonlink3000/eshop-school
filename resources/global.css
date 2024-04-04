@@ -86,7 +86,8 @@ input
     padding-right: 10px;
 }
 
-button 
+button,
+input[type='submit']
 {
     background-color: purple;
     color: white;
@@ -99,7 +100,8 @@ button
     font-weight: bold;
     cursor: pointer;
 }
-button:hover
+button:hover,
+input[type='submit']
 {
     background-color: rgb(73, 0, 73);
 }
