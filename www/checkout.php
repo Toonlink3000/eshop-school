@@ -53,7 +53,7 @@ if (\User\CurrentElevation() > -1)
             <label>Street and house number: </label>
             <input type="text" name="street"><br>
             <input type="hidden" name="confirmation" value="true">
-            <input type="button" value="Checkout!">
+            <input type="submit" value="Checkout!">
            </form>
 
         <?php
