@@ -59,7 +59,7 @@ require_once "../utils/user.php";
                     <?
 
                     echo "<button onclick=\"AddToBasket($id)\">Add to basket!</button>";
-                    if (\User\CurrentElevation() === 10)
+                    if (\User\CurrentElevation() == 10)
                     {
                         ?><form action="" method="GET"><input type="hidden" name="delete" value=<?php echo ($_GET["id"]); ?>><input type="submit" value="DELETE"></form> <?php
                     }
