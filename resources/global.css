@@ -198,7 +198,7 @@ input[type='submit']
     margin-top: 15px;
     text-align: center;   
     font-weight: bold;
-    bottom:0;
+    align-self: flex-end;
 }
 
 #webcontent 
