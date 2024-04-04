@@ -36,7 +36,7 @@ function Render(string $category)
         <img class=\"productboximage\" src=\"resource.php?name=$image\">
 
         </img>
-        <div class=\"pboxfiller\">
+        <div class=\"pboxfiller\"></div>
         <div class=\"productboxname\">
             $name
         </div>
