@@ -16,7 +16,7 @@ require_once "../utils/user.php";
     <body>
 <?php
     
-if (\User\GetCurrentElevation > -1) 
+if (\User\CurrentElevation > -1) 
 {
     if (sizeof(\User\CurrentBasket()) === 0)
     {
