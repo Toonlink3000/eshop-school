@@ -18,7 +18,7 @@ require_once "../widgets/script.php";
             \TopBar\Render();
         ?>
         <div id="webcontent">
-                <h1>Food: </>
+                <h1>Food: </h1>
         <?php 
                 \ProductDisplay\Render("Food");
             ?>

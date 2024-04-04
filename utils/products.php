@@ -52,6 +52,12 @@ function CreateProduct(string $title, string $spec, string $resources, float $pr
     return $result;
 }
 
+function DeleteProduct(int $id)
+{
+    $result = \DB\Query("DELETE FROM esProducts WHERE id=$id");
+    return $result;
+}
+
 function ModifyProduct(int $id, string $title, string $spec, string $resources, float $price, int $stock) 
 {
     $title_clean = \DB\Escape($title);
