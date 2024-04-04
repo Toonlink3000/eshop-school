@@ -192,13 +192,18 @@ input[type='submit']
     width: auto;
     height: auto;
 }
+
+.pboxfiller
+{
+    flex: 1;
+}
+
 .productboxname 
 {
     font-size: large;
     margin-top: 15px;
     text-align: center;   
     font-weight: bold;
-    align-self: flex-end;
 }
 
 #webcontent 
