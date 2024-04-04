@@ -36,6 +36,8 @@ require_once "../widgets/script.php";
                     $images = explode("|", $product["resources"]);
                     $disp = array();
 
+                    echo "<h1>$name</h1>";
+
                     ?> 
                     <div id="product_images">
                     <?
@@ -43,14 +45,12 @@ require_once "../widgets/script.php";
                     {
                         if ($image != "") 
                         {
-                            echo "<img src=\"resources.php?name=$image\">";
+                            echo "<img src=\"resource.php?name=$image\">";
                         }
                     }
                     ?> 
                     <div id="product_images">
                     <?
-
-                    echo "<h1>$name</h1>";
 
                     echo "<button onclick=\"AddToBasket($id)\">Add to basket!</button>";
                 }
