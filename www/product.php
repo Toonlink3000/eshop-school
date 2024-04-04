@@ -19,7 +19,7 @@ require_once "../utils/user.php";
         <?php 
             \TopBar\Render();
 
-            if (\User\CurrentElevation() > -1 and isset($_GET["delete"]))
+            if (\User\CurrentElevation() === 10 and isset($_GET["delete"]))
             {
                 \Products\DeleteProduct(intval($_GET["delete"]));
             }
@@ -59,7 +59,7 @@ require_once "../utils/user.php";
                     <?
 
                     echo "<button onclick=\"AddToBasket($id)\">Add to basket!</button>";
-                    if (\User\CurrentElevation() > -1)
+                    if (\User\CurrentElevation() === 10)
                     {
                         ?><form action="" method="GET"><input type="hidden" name="delete" value=<?php echo ($_GET["id"]); ?>><input type="submit" value="DELETE"></form> <?php
                     }
