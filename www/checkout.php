@@ -40,7 +40,23 @@ if (\User\CurrentElevation() > -1)
     }
     else
     {
-        ?> <h1>Please enter shipping info: </h1> <?php
+        ?> <h1>Please enter shipping info: </h1>
+           <form action="checkout.php" method="POST">
+            <label>First name: </label>
+            <input type="text" name="firstname"><br>
+            <label>Last name:</label>
+            <input type="text" name="lastname"><br>
+            <label>Country: </label>
+            <input type="text" name="country"><br>
+            <label>State: </label>
+            <input type="text" name="state"><br>
+            <label>Street and house number: </label>
+            <input type="text" name="street"><br>
+            <input type="hidden" name="confirmation" value="true">
+            <input type="button" value="Checkout!">
+           </form>
+
+        <?php
     }
 }
 
