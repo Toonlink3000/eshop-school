@@ -16,7 +16,7 @@ require_once "../utils/user.php";
     </head>
     <body>
 <?php \TopBar\Render() ?>
-        <div class="webcontent">
+        <div id="webcontent">
 <?php
     
 if (\User\CurrentElevation() > -1) 
