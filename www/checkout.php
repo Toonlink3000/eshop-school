@@ -14,6 +14,7 @@ require_once "../utils/user.php";
     ?>
     </head>
     <body>
+<?php \TopBar\Render() ?>
 <?php
     
 if (\User\CurrentElevation() > -1) 
@@ -47,5 +48,6 @@ else
     echo("<h1>Please log in or create an account to check out.</h1>");
 }
 ?>
+    <?php \Footer\Render() ?>
     </body>
 </html>
