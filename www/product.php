@@ -45,7 +45,7 @@ require_once "../widgets/script.php";
                     {
                         if ($image != "") 
                         {
-                            echo "<img style="max-width:250px; max-height: 250px;" src=\"resource.php?name=$image\">";
+                            echo "<img style=\"max-width:250px; max-height: 250px;\" src=\"resource.php?name=$image\">";
                         }
                     }
                     ?> 
