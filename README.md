@@ -1,5 +1,7 @@
 # School project (terribly done)
 
+## Hosted on https://www.odnd.cz
+
 ```
 {
     "name": "Test",
