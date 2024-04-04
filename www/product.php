@@ -19,7 +19,7 @@ require_once "../utils/user.php";
         <?php 
             \TopBar\Render();
 
-            if (\User\CurrentElevation() === 10 and isset($_GET["delete"]))
+            if (\User\CurrentElevation() == 10 and isset($_GET["delete"]))
             {
                 \Products\DeleteProduct(intval($_GET["delete"]));
             }
