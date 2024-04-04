@@ -17,7 +17,7 @@ require_once "../widgets/script.php";
     
 if (\User\GetCurrentElevation > -1) 
 {
-    if (sizeof \User\CurrentBasket() === 0)
+    if (sizeof(\User\CurrentBasket()) === 0)
     {
         ?> <h1>Please add some items into your basket to checkout.</h1> <?php
     }
