@@ -1,7 +1,7 @@
 * School project eshop
 
 Example config.json:
-#+BEGIN_SRC
+#+BEGIN_SRC json
 {
     "name": "Test",
     "stylesheet": "global.css",
